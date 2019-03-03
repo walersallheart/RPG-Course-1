@@ -3002,6 +3002,32 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224028175718371306, guid: ad5f7678372ec451481564e6e7da7df3,
     type: 2}
   m_PrefabInternal: {fileID: 1695240244}
+--- !u!1 &1695240246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1828043961352648, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+--- !u!114 &1695240247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695240246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b6e81cbb7934f70be3b4c17ba137bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogText: {fileID: 1268858941}
+  nameText: {fileID: 1916242076}
+  dialogBox: {fileID: 1947480971}
+  nameBox: {fileID: 1266722770}
+  dialogLines:
+  - This
+  - is
+  - a
+  - test
+  - array
 --- !u!1001 &1717446571
 Prefab:
   m_ObjectHideFlags: 0
