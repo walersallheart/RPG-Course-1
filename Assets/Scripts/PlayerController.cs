@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
 
     public string areaTransitionName;
 
+    public bool canMove = true;
+
     // Use this for initialization
     void Start () {
         if (instance == null) {
@@ -34,13 +36,20 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, Input.GetAxisRaw("Vertical") * moveSpeed);
+        if (canMove){
+            theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, Input.GetAxisRaw("Vertical") * moveSpeed);
+        } else {
+            theRB.velocity = Vector2.zero;
+        }
+
         myAnim.SetFloat("moveX", theRB.velocity.x);
         myAnim.SetFloat("moveY", theRB.velocity.y);
 
         if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1){
-            myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            if (canMove) {
+                myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            }
         }
 
         transform.position = new Vector3(
