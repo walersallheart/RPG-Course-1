@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DIalogManager : MonoBehaviour {
+public class DialogManager : MonoBehaviour {
 
 	public Text dialogText;
 	public Text nameText;
@@ -16,12 +16,22 @@ public class DIalogManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		dialogText.text = dialogLines[0];
+		dialogText.text = dialogLines[currentLine];
 		nameText.text = "Gandalf";
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (dialogBox.activeInHierarchy) {
+			if (Input.GetButtonUp("Fire1")) {
+				currentLine++;
+
+				if (currentLine >= dialogLines.Length) {
+					dialogBox.SetActive(false);
+				} else {
+					dialogText.text = dialogLines[currentLine];
+				}
+			}
+		}
 	}
 }
