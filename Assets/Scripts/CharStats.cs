@@ -37,6 +37,20 @@ public class CharStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKeyDown(KeyCode.K)) {
+			AddExp(500);
+		}
+	}
+
+	public void AddExp(int expToAdd){
+		currentEXP += expToAdd;
+
+		if (currentEXP > expToNextLevel[playerLevel]) {
+			currentEXP -= expToNextLevel[playerLevel];
+
+			playerLevel++;
+
+
+		}
 	}
 }
