@@ -2720,9 +2720,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - It works!
-  - Or does it?
-  - ???
+  - n-Girl
+  - Please help me!
+  - n-Player
+  - Is everything okay?
+  - n-Girl
+  - No!
+  - My family was kidnapped by a dragon!
+  - n-Player
+  - Don't worry
+  - I'll save them!
 --- !u!1 &1266722770
 GameObject:
   m_ObjectHideFlags: 0
