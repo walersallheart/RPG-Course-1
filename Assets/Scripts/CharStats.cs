@@ -16,6 +16,7 @@ public class CharStats : MonoBehaviour {
 	public int maxHP=100;
 	public int currentMP;
 	public int maxMP=30;
+	public int[] mpLvlBonus;
 	public int strength;
 	public int defense;
 	public int wpnPwr;
@@ -38,19 +39,33 @@ public class CharStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.K)) {
-			AddExp(500);
+			AddExp(1000);
 		}
 	}
 
 	public void AddExp(int expToAdd){
 		currentEXP += expToAdd;
 
-		if (currentEXP > expToNextLevel[playerLevel]) {
+		if (playerLevel < maxLevel && currentEXP > expToNextLevel[playerLevel]) {
 			currentEXP -= expToNextLevel[playerLevel];
 
 			playerLevel++;
 
+			if (playerLevel % 2 == 0) {
+				strength++;
+			} else {
+				defense++;
+			}
 
+			maxHP = Mathf.FloorToInt(maxHP * 1.05f);
+			currentHP = maxHP;
+
+			maxMP += mpLvlBonus[playerLevel];
+			currentMP = maxMP;
+		}
+
+		if (playerLevel >= maxLevel) {
+			currentEXP = 0;
 		}
 	}
 }
