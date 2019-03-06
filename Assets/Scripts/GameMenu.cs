@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameMenu : MonoBehaviour {
 
 	public GameObject theMenu;
+	public GameObject[] windows;
 
 	private CharStats[] playerStats;
 
@@ -23,8 +24,7 @@ public class GameMenu : MonoBehaviour {
 	void Update () {
 		if (Input.GetButton("Fire2") || Input.GetKeyDown(KeyCode.M)) {
 			if (theMenu.activeInHierarchy) {
-				theMenu.SetActive(false);
-				GameManager.instance.gameMenuOpen = false;
+				CloseMenu();
 			} else {
 				theMenu.SetActive(true);
 				UpdateMainStats();
@@ -53,5 +53,25 @@ public class GameMenu : MonoBehaviour {
 				charStatHolder[i].SetActive(false);
 			}
 		}
+	}
+
+	public void ToggleWindows(int windowNumber) {
+		for (int i=0; i<windows.Length; i++){
+			if (i == windowNumber) {
+				windows[i].SetActive(!windows[i].activeInHierarchy);
+			} else {
+				windows[i].SetActive(false);
+			}
+		}
+	}
+	
+	public void CloseMenu(){
+		for (int i=0; i<windows.Length; i++){
+			windows[i].SetActive(false);
+		}
+
+		theMenu.SetActive(false);
+
+		GameManager.instance.gameMenuOpen = false;
 	}
 }
