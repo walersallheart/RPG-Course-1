@@ -16,8 +16,10 @@ public class GameMenu : MonoBehaviour {
 		if (Input.GetButton("Fire2") || Input.GetKeyDown(KeyCode.M)) {
 			if (theMenu.activeInHierarchy) {
 				theMenu.SetActive(false);
+				GameManager.instance.gameMenuOpen = false;
 			} else {
 				theMenu.SetActive(true);
+				GameManager.instance.gameMenuOpen = true;
 			}
 		}
 	}
