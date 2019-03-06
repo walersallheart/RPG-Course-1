@@ -1630,6 +1630,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theMenu: {fileID: 1737481108199112}
+  nameText:
+  - {fileID: 114151972971135734}
+  - {fileID: 114568776420021338}
+  - {fileID: 114228295290659810}
+  hpText:
+  - {fileID: 114646214354325338}
+  - {fileID: 114001482176861282}
+  - {fileID: 114529801552096364}
+  mpText:
+  - {fileID: 114768140901108618}
+  - {fileID: 114857246139883024}
+  - {fileID: 114580570201354126}
+  lvlText:
+  - {fileID: 114534805244085522}
+  - {fileID: 114375059516335432}
+  - {fileID: 114260159990355676}
+  expText:
+  - {fileID: 114475038628010960}
+  - {fileID: 114812832034460976}
+  - {fileID: 114419007702718022}
+  expSlider:
+  - {fileID: 114128306701190864}
+  - {fileID: 114823861324386122}
+  - {fileID: 114115596522034994}
+  charImage:
+  - {fileID: 114338944538009328}
+  - {fileID: 114589803941905262}
+  - {fileID: 114263517789337090}
+  charStatHolder:
+  - {fileID: 1549136899708014}
+  - {fileID: 1403809873106212}
+  - {fileID: 1682111699122282}
 --- !u!114 &114273324892994122
 MonoBehaviour:
   m_ObjectHideFlags: 1
