@@ -1695,7 +1695,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114617657023697746}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114264573798814374}
+        m_MethodName: StatusChar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114048101116219934
@@ -1849,6 +1860,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114264573798814374}
+        m_MethodName: OpenStatus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2536,6 +2558,22 @@ MonoBehaviour:
   - {fileID: 1549136899708014}
   - {fileID: 1403809873106212}
   - {fileID: 1682111699122282}
+  statusButtons:
+  - {fileID: 1941947680885672}
+  - {fileID: 1654380730586440}
+  - {fileID: 1543070340526036}
+  statusName: {fileID: 114916692246201330}
+  statusClass: {fileID: 114455950915963034}
+  statusHP: {fileID: 114507544452385996}
+  statusMP: {fileID: 114554557566564118}
+  statusStr: {fileID: 114608546952901728}
+  statusDef: {fileID: 114398302648279262}
+  statusWpnEqpd: {fileID: 114082026697719730}
+  statusWpnPwr: {fileID: 114653693994561532}
+  statusArmrEqpd: {fileID: 114583502239332710}
+  statusArmrPwr: {fileID: 114960266654390522}
+  statusExp: {fileID: 114233054878622792}
+  statusImage: {fileID: 114997894489480752}
 --- !u!114 &114273324892994122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3210,7 +3248,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114586522942547818}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114264573798814374}
+        m_MethodName: StatusChar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114519083963222376
@@ -4672,7 +4721,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114833118214892490}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114264573798814374}
+        m_MethodName: StatusChar
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114978781339880830
@@ -5892,7 +5952,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 156.89996, y: -0.9000244}
+  m_AnchoredPosition: {x: 156.89996, y: -0.9001465}
   m_SizeDelta: {x: -385.3, y: -73.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224295128247563924
@@ -6918,7 +6978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 156.8999, y: -0.9000244}
+  m_AnchoredPosition: {x: 156.8999, y: -0.9001465}
   m_SizeDelta: {x: -385.2998, y: -73.400024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224962568640184890

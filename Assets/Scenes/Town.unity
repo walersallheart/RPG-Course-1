@@ -113,6 +113,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &61896930 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114398302648279262, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &101093952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114960266654390522, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &298223620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,6 +2674,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &437906936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114916692246201330, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &586668091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1543070340526036, guid: ad5f7678372ec451481564e6e7da7df3,
@@ -2672,11 +2690,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1654380730586440, guid: ad5f7678372ec451481564e6e7da7df3,
     type: 2}
   m_PrefabInternal: {fileID: 1695240244}
+--- !u!114 &692809713 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114233054878622792, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &766191734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114608546952901728, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &807508140 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1941947680885672, guid: ad5f7678372ec451481564e6e7da7df3,
     type: 2}
   m_PrefabInternal: {fileID: 1695240244}
+--- !u!114 &823495584 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114082026697719730, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &847541588
 Prefab:
   m_ObjectHideFlags: 0
@@ -2870,6 +2906,24 @@ MonoBehaviour:
   - Don't worry
   - I'll save them!
   isPerson: 1
+--- !u!114 &1079893257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114583502239332710, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1129553934 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114653693994561532, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1486110744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114997894489480752, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1493878201
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,6 +3771,71 @@ Prefab:
       propertyPath: statusButtons.Array.data[2]
       value: 
       objectReference: {fileID: 586668091}
+    - target: {fileID: 224819117314831816, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusName
+      value: 
+      objectReference: {fileID: 437906936}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusClass
+      value: 
+      objectReference: {fileID: 1845854412}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusHP
+      value: 
+      objectReference: {fileID: 1861390990}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusMP
+      value: 
+      objectReference: {fileID: 1931914767}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusStr
+      value: 
+      objectReference: {fileID: 766191734}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusDef
+      value: 
+      objectReference: {fileID: 61896930}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusWpnEqpd
+      value: 
+      objectReference: {fileID: 823495584}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusWpnPwr
+      value: 
+      objectReference: {fileID: 1129553934}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusArmrEqpd
+      value: 
+      objectReference: {fileID: 1079893257}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusArmrPwr
+      value: 
+      objectReference: {fileID: 101093952}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusExp
+      value: 
+      objectReference: {fileID: 692809713}
+    - target: {fileID: 114264573798814374, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: statusImage
+      value: 
+      objectReference: {fileID: 1486110744}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad5f7678372ec451481564e6e7da7df3, type: 2}
   m_IsPrefabAsset: 0
@@ -3772,6 +3891,24 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1695240244}
   m_Script: {fileID: 11500000, guid: f10cb30292cdd451f8e5d5ef2a98e00d, type: 3}
+--- !u!114 &1845854412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114455950915963034, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1861390990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114507544452385996, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1931914767 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114554557566564118, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1695240244}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &2027948932
 Prefab:
   m_ObjectHideFlags: 0

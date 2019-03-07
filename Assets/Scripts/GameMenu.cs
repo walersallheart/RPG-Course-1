@@ -16,6 +16,9 @@ public class GameMenu : MonoBehaviour {
 	public GameObject[] charStatHolder;
 	public GameObject[] statusButtons;
 
+	public Text statusName, statusClass, statusHP, statusMP, statusStr, statusDef, statusWpnEqpd, statusWpnPwr, statusArmrEqpd, statusArmrPwr, statusExp;
+	public Image statusImage;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -80,10 +83,35 @@ public class GameMenu : MonoBehaviour {
 
 	public void OpenStatus(){
 		UpdateMainStats();
+		StatusChar(0);
 
 		for (int i = 0; i<statusButtons.Length; i++){
 			statusButtons[i].SetActive(playerStats[i].gameObject.activeInHierarchy);
 			statusButtons[i].GetComponentInChildren<Text>().text = playerStats[i].charName;
 		}
+	}
+
+	public void StatusChar(int selected){
+		statusName.text = playerStats[selected].charName;
+		statusClass.text = playerStats[selected].charClass;
+		statusHP.text = "" + playerStats[selected].currentHP + "/" + playerStats[selected].maxHP;
+		statusMP.text = "" + playerStats[selected].currentMP + "/" + playerStats[selected].maxMP;;
+		statusStr.text = playerStats[selected].strength.ToString();
+		statusDef.text = playerStats[selected].defense.ToString();
+		if (playerStats[selected].equippedWpn != "") {
+			statusWpnEqpd.text = playerStats[selected].equippedWpn;
+		} else {
+			statusWpnEqpd.text = "None";
+		}
+		statusWpnPwr.text = playerStats[selected].wpnPwr.ToString();
+		if (playerStats[selected].equippedArmr != "") {
+			statusArmrEqpd.text = playerStats[selected].equippedArmr;
+		} else {
+			statusArmrEqpd.text = "None";
+		}
+		statusArmrPwr.text = playerStats[selected].armrPwr.ToString();
+
+		statusExp.text = (playerStats[selected].expToNextLevel[playerStats[selected].playerLevel] - playerStats[selected].currentEXP).ToString();
+		statusImage.sprite = playerStats[selected].charImage;
 	}
 }
