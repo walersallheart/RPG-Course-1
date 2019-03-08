@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour {
 			itemAfterSpace = false;
 
 			for (int i = 0; i<itemsHeld.Length-1; i++){
-				if (itemsHeld[i] == "") {
+				if (itemsHeld[i] == "") { //if this space is empty, move the object from the next spot into it
 					itemsHeld[i] = itemsHeld[i + 1];
 					itemsHeld[i + 1] = "";
 

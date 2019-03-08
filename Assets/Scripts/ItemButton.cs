@@ -18,4 +18,10 @@ public class ItemButton : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void Press(){
+		if (GameManager.instance.itemsHeld[buttonValue] != "") {
+			GameMenu.instance.SelectItem(GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[buttonValue]));
+		}
+	}
 }
