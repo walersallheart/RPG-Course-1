@@ -171,4 +171,9 @@ public class GameMenu : MonoBehaviour {
 	public void CloseItemCharChoice(){
 		itemCharChoiceMenu.SetActive(false);
 	}
+
+	public void UseItem(int selectChar){
+		activeItem.Use(selectChar);
+		CloseItemCharChoice();
+	}
 }

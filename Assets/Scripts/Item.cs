@@ -32,4 +32,50 @@ public class Item : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public void Use(int charToUseOn){
+		CharStats selectedChar = GameManager.instance.playerStats[charToUseOn];
+
+		if (isItem) {
+			if (affectHP){
+				selectedChar.currentHP += amountToChange;
+
+				if (selectedChar.currentHP > selectedChar.maxHP) {
+					selectedChar.currentHP = selectedChar.maxHP;
+				}
+			}
+
+			if (affectMP){
+				selectedChar.currentMP += amountToChange;
+
+				if (selectedChar.currentMP > selectedChar.maxMP) {
+					selectedChar.currentMP = selectedChar.maxMP;
+				}
+			}
+
+			if (affectStr) {
+				selectedChar.strength += amountToChange;
+			}
+		}
+
+		if (isWeapon) {
+			if (selectedChar.equippedWpn != "") {
+				GameManager.instance.AddItem(selectedChar.equippedWpn); //put the weapon back into the inventory
+			}
+
+			selectedChar.equippedWpn = itemName;
+			selectedChar.wpnPwr = weaponStrength;
+		}
+
+		if (isArmor){
+			if (selectedChar.equippedArmr != "") {
+				GameManager.instance.AddItem(selectedChar.equippedArmr); //put the armor back into the inventory
+			}
+
+			selectedChar.equippedArmr = itemName;
+			selectedChar.armrPwr = armorStrength;
+		}
+
+		GameManager.instance.RemoveItem(itemName); //this item has been used/quipped so remove it from the inventory
+	}
 }
