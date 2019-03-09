@@ -10,6 +10,7 @@ public class Shop : MonoBehaviour {
 	public GameObject buyMenu;
 	public GameObject sellMenu;
 	public Text goldText;
+	public string[] itemsForSale;
 
 	// Use this for initialization
 	void Start () {
