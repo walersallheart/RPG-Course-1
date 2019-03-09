@@ -22,6 +22,7 @@ public class GameMenu : MonoBehaviour {
 	public GameObject itemCharChoiceMenu;
 	public Text[] itemCharChoiceNames;
 	public static GameMenu instance;
+	public Text goldText;
 
 	// Use this for initialization
 	void Start () {
@@ -61,6 +62,8 @@ public class GameMenu : MonoBehaviour {
 				charStatHolder[i].SetActive(false);
 			}
 		}
+
+		goldText.text = GameManager.instance.currentGold.ToString("n0") + "g";
 	}
 
 	public void ToggleWindows(int windowNumber) {

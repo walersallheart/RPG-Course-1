@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	public string[] itemsHeld;
 	public int[] numberOfItems;
 	public Item[] referenceItems;
-		
+	public int currentGold;		
 	// Use this for initialization
 	void Start () {
 		instance = this;
