@@ -20,6 +20,8 @@ public class QuestManager : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Q)) {
 			Debug.Log(CheckIfComplete("quest test"));
+			MarkQuestComplete("quest test");
+			MarkQuestIncomplete("fight the demon");
 		}
 	}
 
@@ -44,9 +46,21 @@ public class QuestManager : MonoBehaviour {
 
 	public void MarkQuestComplete(string questToMark){
 		questMarkersComplete[GetQuestNumber(questToMark)] = true;
+
+		UpdateLocalQuestObjects();
 	}
 
 	public void MarkQuestIncomplete(string questToMark) {
 		questMarkersComplete[GetQuestNumber(questToMark)] = false;
+
+		UpdateLocalQuestObjects();
+	}
+
+	public void UpdateLocalQuestObjects(){
+		QuestObjectActivator[] questObjects = FindObjectsOfType<QuestObjectActivator>();
+
+		for (int i = 0; i<questObjects.Length; i++){
+			questObjects[i].CheckCompletion();
+		}
 	}
 }
