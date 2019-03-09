@@ -310,7 +310,7 @@ Tilemap:
   - first: {x: 7, y: -10, z: 0}
     second:
       m_TileIndex: 8
-      m_TileSpriteIndex: 8
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -3527,10 +3527,10 @@ Tilemap:
     m_Data: {fileID: 21300084, guid: 1c6d3937a6785fd48aacd0d71d6f8c96, type: 3}
   - m_RefCount: 15
     m_Data: {fileID: 21300042, guid: 1c6d3937a6785fd48aacd0d71d6f8c96, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300046, guid: 1c6d3937a6785fd48aacd0d71d6f8c96, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300046, guid: 1c6d3937a6785fd48aacd0d71d6f8c96, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300008, guid: 1c6d3937a6785fd48aacd0d71d6f8c96, type: 3}
   - m_RefCount: 1
@@ -3830,6 +3830,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114883074315547966, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264211730964618, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224028175718371306, guid: ad5f7678372ec451481564e6e7da7df3,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -6384,6 +6394,56 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114883074315547966, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883074315547966, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883074315547966, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1231418640}
+    - target: {fileID: 114883074315547966, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883074315547966, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264211730964618, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264211730964618, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264211730964618, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1231418640}
+    - target: {fileID: 114264211730964618, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SellItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 114264211730964618, guid: ad5f7678372ec451481564e6e7da7df3,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad5f7678372ec451481564e6e7da7df3, type: 2}
   m_IsPrefabAsset: 0
@@ -6495,6 +6555,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1231418640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114571062170292412, guid: ad5f7678372ec451481564e6e7da7df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1087870665}
+  m_Script: {fileID: 11500000, guid: a04344d98a5464e40aa88c48357aec77, type: 3}
 --- !u!1001 &1333554603
 Prefab:
   m_ObjectHideFlags: 0
