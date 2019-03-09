@@ -11,8 +11,13 @@ public class Shop : MonoBehaviour {
 	public GameObject sellMenu;
 	public Text goldText;
 	public string[] itemsForSale;
+
 	public ItemButton[] buyItemButtons;
 	public ItemButton[] sellItemButtons;
+
+	public Item selectedItem;
+	public Text buyItemName, buyItemDescription, buyItemValue;
+	public Text sellItemName, sellItemDescription, sellItemValue;
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +48,8 @@ public class Shop : MonoBehaviour {
 		buyMenu.SetActive(true);
 		sellMenu.SetActive(false);
 
+		buyItemButtons[0].Press(); //select the first item by default
+
 		for (int i = 0; i<buyItemButtons.Length; i++){
 			buyItemButtons[i].buttonValue = i;
 
@@ -63,6 +70,8 @@ public class Shop : MonoBehaviour {
 
 		GameManager.instance.SortItems();
 
+		sellItemButtons[0].Press(); //select the first item by default
+
 		for (int i = 0; i<sellItemButtons.Length; i++){
 			sellItemButtons[i].buttonValue = i;
 
@@ -75,5 +84,19 @@ public class Shop : MonoBehaviour {
 				sellItemButtons[i].amountText.text = "";
 			}
 		}
+	}
+
+	public void SelectBuyItem(Item buyItem){
+		selectedItem = buyItem;
+		buyItemName.text = selectedItem.itemName;
+		buyItemDescription.text = selectedItem.description;
+		buyItemValue.text = "Value: " + selectedItem.value.ToString("n0") + "g";
+	}
+
+	public void SelectSellItem(Item sellItem){
+		selectedItem = sellItem;
+		sellItemName.text = selectedItem.itemName;
+		sellItemDescription.text = selectedItem.description;
+		sellItemValue.text = "Value: " + Mathf.FloorToInt(selectedItem.value * .5f).ToString("n0") + "g";
 	}
 }
