@@ -175,5 +175,31 @@ public class GameManager : MonoBehaviour {
 		float z = PlayerPrefs.GetFloat("Player_Position_z");
 
 		PlayerController.instance.transform.position = new Vector3(x, y, z);
+
+		for (int i = 0; i<playerStats.Length; i++){
+			if (PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_active") == 0) {
+				playerStats[i].gameObject.SetActive(false);
+			} else {
+				playerStats[i].gameObject.SetActive(true);
+			}
+
+			playerStats[i].playerLevel = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_Level");
+			playerStats[i].currentEXP = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_CurrentExp");
+			playerStats[i].currentHP = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_CurrentHP");
+			playerStats[i].maxHP = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_MaxHP");
+			playerStats[i].currentMP = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_CurrentMP");
+			playerStats[i].maxMP = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_MaxMP");
+			playerStats[i].strength = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_Strength");
+			playerStats[i].defense = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_Defense");
+			playerStats[i].wpnPwr = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_WpnPwn");
+			playerStats[i].armrPwr = PlayerPrefs.GetInt("Player_" + playerStats[i].charName + "_ArmrPwr");
+			playerStats[i].equippedWpn = PlayerPrefs.GetString("Player_" + playerStats[i].charName + "_EquippedWpn");
+			playerStats[i].equippedArmr = PlayerPrefs.GetString("Player_" + playerStats[i].charName + "_EquippedArmr");
+		}
+
+		for (int i = 0; i<itemsHeld.Length; i++){
+			itemsHeld[i] = PlayerPrefs.GetString("ItemInInventory_" + i);
+			numberOfItems[i] = PlayerPrefs.GetInt("ItemAmount_" + i);
+		}
 	}
 }
