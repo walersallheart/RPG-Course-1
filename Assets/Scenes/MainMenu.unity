@@ -538,6 +538,53 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 861954940}
   m_CullTransparentMesh: 0
+--- !u!1001 &950158471
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4668280741625610, guid: b44c5404ed09243d1b3073a2ac0f7209, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668280741625610, guid: b44c5404ed09243d1b3073a2ac0f7209, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668280741625610, guid: b44c5404ed09243d1b3073a2ac0f7209, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668280741625610, guid: b44c5404ed09243d1b3073a2ac0f7209, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668280741625610, guid: b44c5404ed09243d1b3073a2ac0f7209, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668280741625610, guid: b44c5404ed09243d1b3073a2ac0f7209, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668280741625610, guid: b44c5404ed09243d1b3073a2ac0f7209, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668280741625610, guid: b44c5404ed09243d1b3073a2ac0f7209, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 82650895502330830, guid: b44c5404ed09243d1b3073a2ac0f7209,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b44c5404ed09243d1b3073a2ac0f7209, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1064498501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,6 +1074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newGameScene: Countryside
   continueButton: {fileID: 1323798072}
+  loadGameScene: LoadingScene
 --- !u!1 &1720873070
 GameObject:
   m_ObjectHideFlags: 0

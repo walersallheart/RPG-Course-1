@@ -15646,6 +15646,7 @@ MonoBehaviour:
   - {fileID: 114143980114739222}
   - {fileID: 114250157536599814}
   goldText: {fileID: 114151972971135734}
+  mainMenuName: MainMenu
 --- !u!114 &114264948081228620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -27527,6 +27528,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114264573798814374}
         m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114264573798814374}
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

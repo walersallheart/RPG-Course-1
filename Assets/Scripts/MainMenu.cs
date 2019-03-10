@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour {
 
 	public GameObject continueButton;
 
+	public string loadGameScene;
+
 	// Use this for initialization
 	void Start () {
 		if (PlayerPrefs.HasKey("Current_Scene")) {
@@ -23,7 +25,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void Continue(){
-
+		SceneManager.LoadScene(loadGameScene);
 	}
 
 	public void NewGame(){

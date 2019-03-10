@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a031477363d47749d5b4d98e46f819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: Woody
+  charName: Gandalf
   charClass: Ent
   playerLevel: 3
   currentEXP: 543
