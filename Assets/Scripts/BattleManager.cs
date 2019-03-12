@@ -40,7 +40,7 @@ public class BattleManager : MonoBehaviour {
 				} else {
 					uiButtonsHolder.SetActive(false);
 
-					//enemy should attack
+					StartCoroutine(EnemyMoveCo());
 				}
 			}
 
@@ -135,14 +135,36 @@ public class BattleManager : MonoBehaviour {
 
 		if (allEnemiesDead || allPlayersDead) {
 			if (allEnemiesDead) {
-				//end battle in victory
+				//todo end battle in victory
 			} else {
-				//end battle in failure
+				//todo end battle in failure
 			}
 
 			battleScene.SetActive(false);
 			GameManager.instance.battleActive = false;
 			battleActive = false;
 		}
+	}
+
+	public IEnumerator EnemyMoveCo(){
+		turnWaiting = false;
+		yield return new WaitForSeconds(1f);
+		EnemyAttack();
+		yield return new WaitForSeconds(1f);
+		NextTurn();
+	}
+
+	public void EnemyAttack(){
+		List<int> players = new List<int>();
+
+		for (int i = 0; i<activeBattlers.Count; i++){
+			if (activeBattlers[i].isPlayer && activeBattlers[i].currentHP > 0) { //make a list of valid targets
+				players.Add(i);
+			}
+		}
+
+		int selectedTarget = players[Random.Range(0,players.Count)];
+
+		activeBattlers[selectedTarget].currentHP -= 30;
 	}
 }
