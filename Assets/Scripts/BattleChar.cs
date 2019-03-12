@@ -12,7 +12,6 @@ public class BattleChar : MonoBehaviour {
 	public int currentHP, maxHP, currentMP, maxMP, strength, defense, wpnPower, armrPower;
 	public bool hasDied;
 
-
 	// Use this for initialization
 	void Start () {
 		
