@@ -156,6 +156,14 @@ public class BattleManager : MonoBehaviour {
 			battleScene.SetActive(false);
 			GameManager.instance.battleActive = false;
 			battleActive = false;
+		} else {
+			while (activeBattlers[currentTurn].currentHP == 0) {
+				currentTurn++;
+
+				if (currentTurn >= activeBattlers.Count) {
+					currentTurn = 0;
+				}
+			}
 		}
 	}
 
@@ -220,8 +228,8 @@ public class BattleManager : MonoBehaviour {
 
 					playerName[i].gameObject.SetActive(true);
 					playerName[i].text = playerData.charName;
-					playerHP[i].text = playerData.maxHP.ToString("n0") + "/" + playerData.currentHP.ToString("n0");
-					playerMP[i].text = playerData.maxMP.ToString("n0") + "/" + playerData.currentMP.ToString("n0");
+					playerHP[i].text = playerData.currentHP.ToString("n0") + "/" + playerData.maxHP.ToString("n0");
+					playerMP[i].text = playerData.currentMP.ToString("n0") + "/" + playerData.maxMP.ToString("n0");
 				} else {
 					playerName[i].gameObject.SetActive(false);
 				}
