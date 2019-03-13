@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class BattleManager : MonoBehaviour {
 
@@ -25,6 +27,8 @@ public class BattleManager : MonoBehaviour {
 	public GameObject enemyAttackEffect;
 
 	public DamageNumber theDamageNumber;
+
+	public Text[] playerName, playerHP, playerMP;
 
 	// Use this for initialization
 	void Start () {
@@ -102,7 +106,9 @@ public class BattleManager : MonoBehaviour {
 			}
 
 			turnWaiting = true;
-			currentTurn = 0;
+			currentTurn = Random.Range(0, activeBattlers.Count);
+
+			UpdateUIStats();
 		}
 	}
 
@@ -136,6 +142,8 @@ public class BattleManager : MonoBehaviour {
 					allEnemiesDead = false;
 				}
 			}
+
+			UpdateUIStats();
 		}
 
 		if (allEnemiesDead || allPlayersDead) {
@@ -170,8 +178,6 @@ public class BattleManager : MonoBehaviour {
 
 		int selectedTarget = players[Random.Range(0,players.Count)];
 
-		//activeBattlers[selectedTarget].currentHP -= 30;
-
 		int selectAttack = Random.Range(0,activeBattlers[currentTurn].movesAvailable.Length);
 		int movePower = 0;
 
@@ -199,5 +205,29 @@ public class BattleManager : MonoBehaviour {
 		activeBattlers[target].currentHP -= damageToGive;
 
 		Instantiate(theDamageNumber, activeBattlers[target].transform.position, activeBattlers[target].transform.rotation).SetDamage(damageToGive);
+
+		UpdateUIStats();
+	}
+
+	public void UpdateUIStats(){
+		for (int i = 0; i<playerName.Length; i++){
+			if (activeBattlers.Count > i) {
+				if (activeBattlers[i].isPlayer) {
+					BattleChar playerData = activeBattlers[i];
+
+					playerData.currentHP = Mathf.Clamp(playerData.currentHP, 0, int.MaxValue);
+					playerData.currentMP = Mathf.Clamp(playerData.currentMP, 0, int.MaxValue);
+
+					playerName[i].gameObject.SetActive(true);
+					playerName[i].text = playerData.charName;
+					playerHP[i].text = playerData.maxHP.ToString("n0") + "/" + playerData.currentHP.ToString("n0");
+					playerMP[i].text = playerData.maxMP.ToString("n0") + "/" + playerData.currentMP.ToString("n0");
+				} else {
+					playerName[i].gameObject.SetActive(false);
+				}
+			} else {
+				playerName[i].gameObject.SetActive(false);
+			}
+		}
 	}
 }
