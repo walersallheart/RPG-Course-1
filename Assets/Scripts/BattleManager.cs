@@ -30,6 +30,9 @@ public class BattleManager : MonoBehaviour {
 
 	public Text[] playerName, playerHP, playerMP;
 
+	public GameObject targetMenu;
+	public BattleTargetButton[] targetButtons;
+
 	// Use this for initialization
 	void Start () {
 		instance = this;
@@ -239,9 +242,8 @@ public class BattleManager : MonoBehaviour {
 		}
 	}
 
-	public void PlayerAttack(string moveName/* , int selectedTarget*/){
+	public void PlayerAttack(string moveName, int selectedTarget){
 		int movePower = 0;
-		int selectedTarget = 2;
 
 		for (int i = 0; i<movesList.Length; i++) {
 			if (movesList[i].moveName == moveName) {
@@ -257,5 +259,30 @@ public class BattleManager : MonoBehaviour {
 		uiButtonsHolder.SetActive(false); //prevent double clicking button
 
 		NextTurn();
+
+		targetMenu.SetActive(false);
+	}
+
+	public void OpenTargetMenu(string moveName) {
+		targetMenu.SetActive(true);
+
+		List<int> Enemies = new List<int>();
+
+		for (int i = 0; i<activeBattlers.Count; i++){
+			if (!activeBattlers[i].isPlayer) {
+				Enemies.Add(i);
+			}
+		}
+
+		for (int i = 0; i<targetButtons.Length; i++){
+			if (Enemies.Count > i) {
+				targetButtons[i].gameObject.SetActive(true);
+				targetButtons[i].moveName = moveName;
+				targetButtons[i].activeBattlerTarget = Enemies[i];
+				targetButtons[i].targetName.text = activeBattlers[Enemies[i]].charName;
+			} else {
+				targetButtons[i].gameObject.SetActive(false);
+			}
+		}
 	}
 }
