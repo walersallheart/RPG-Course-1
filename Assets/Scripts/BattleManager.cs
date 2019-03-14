@@ -36,6 +36,8 @@ public class BattleManager : MonoBehaviour {
 	public GameObject magicMenu;
 	public BattleMagicSelect[] magicButtons;
 
+	public BattleNotification battleNotice;
+
 
 	// Use this for initialization
 	void Start () {
