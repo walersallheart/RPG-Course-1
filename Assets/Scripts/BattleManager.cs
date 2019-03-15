@@ -38,6 +38,8 @@ public class BattleManager : MonoBehaviour {
 
 	public BattleNotification battleNotice;
 
+	public int chanceToFlee = 35;
+
 
 	// Use this for initialization
 	void Start () {
@@ -310,6 +312,20 @@ public class BattleManager : MonoBehaviour {
 			} else {
 				magicButtons[i].gameObject.SetActive(false);
 			}
+		}
+	}
+
+	public void Flee(){
+		int fleeSuccess = Random.Range(0,100);
+
+		if (fleeSuccess < chanceToFlee){
+			//end battle
+			battleActive = false;
+			battleScene.SetActive(false);
+		} else {
+			NextTurn();
+			battleNotice.theText.text = "Couldn't escape";
+			battleNotice.Activate();
 		}
 	}
 }
