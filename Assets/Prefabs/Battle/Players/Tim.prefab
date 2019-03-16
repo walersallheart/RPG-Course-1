@@ -66,6 +66,9 @@ MonoBehaviour:
   wpnPower: 0
   armrPower: 0
   hasDied: 0
+  theSprite: {fileID: 212045834256499012}
+  deadSprite: {fileID: 21300098, guid: 61db59f3f1e8e47ddbe377de45220648, type: 3}
+  aliveSprite: {fileID: 21300068, guid: 61db59f3f1e8e47ddbe377de45220648, type: 3}
 --- !u!212 &212045834256499012
 SpriteRenderer:
   m_ObjectHideFlags: 1
