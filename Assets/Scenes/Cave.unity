@@ -166,6 +166,9 @@ MonoBehaviour:
   activateOnExit: 0
   timeBetweenBattles: 5
   deactivateAfterStarting: 0
+  cannotFlee: 0
+  shouldCompleteQuest: 0
+  questToComplete: 
 --- !u!61 &506674177
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -244,7 +247,10 @@ MonoBehaviour:
   activateOnStay: 0
   activateOnExit: 0
   timeBetweenBattles: 0
-  deactivateAfterStarting: 0
+  deactivateAfterStarting: 1
+  cannotFlee: 1
+  shouldCompleteQuest: 0
+  questToComplete: 
 --- !u!61 &692025286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10538,7 +10544,7 @@ Prefab:
     - target: {fileID: 114204023832426692, guid: 2ad473e275da541d38910b38cf41f5d4,
         type: 2}
       propertyPath: musicToPlay
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ad473e275da541d38910b38cf41f5d4, type: 2}
