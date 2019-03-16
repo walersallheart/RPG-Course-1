@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour {
 
@@ -39,6 +39,8 @@ public class BattleManager : MonoBehaviour {
 	public BattleNotification battleNotice;
 
 	public int chanceToFlee = 35;
+
+	public string gameOverScene;
 
 
 	// Use this for initialization
@@ -166,7 +168,7 @@ public class BattleManager : MonoBehaviour {
 			if (allEnemiesDead) {
 				StartCoroutine(EndBattleCo());
 			} else {
-				//todo end battle in failure
+				StartCoroutine(GameOverCo());
 			}
 		} else {
 			while (activeBattlers[currentTurn].currentHP == 0) {
@@ -338,7 +340,7 @@ public class BattleManager : MonoBehaviour {
 		targetMenu.SetActive(false);
 		magicMenu.SetActive(false);
 
-		AudioManager.instance.PlayBGM(6); //restart level music
+		//AudioManager.instance.PlayBGM(6);
 
 		yield return new WaitForSeconds(.5f);
 
@@ -366,5 +368,17 @@ public class BattleManager : MonoBehaviour {
 		GameManager.instance.battleActive = false;
 		
 		AudioManager.instance.PlayBGM(FindObjectOfType<CameraController>().musicToPlay); //restart level music
+	}
+
+	public IEnumerator GameOverCo(){
+		battleActive = false;
+
+		UIFade.instance.FadeToBlack();
+
+		yield return new WaitForSeconds(1.5f);
+
+		SceneManager.LoadScene(gameOverScene);
+
+		battleScene.SetActive(false);
 	}
 }

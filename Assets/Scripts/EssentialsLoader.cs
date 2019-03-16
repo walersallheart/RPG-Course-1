@@ -11,6 +11,8 @@ public class EssentialsLoader : MonoBehaviour {
 
 	public GameObject audioMan;
 
+	public GameObject battleMan;
+
 	// Use this for initialization
 	void Start () {
 		if (UIFade.instance == null){
@@ -28,6 +30,10 @@ public class EssentialsLoader : MonoBehaviour {
 
 		if (AudioManager.instance == null) {
 			Instantiate(audioMan);
+		}
+
+		if (BattleManager.instance == null) {
+			Instantiate(battleMan);
 		}
 	}
 	
