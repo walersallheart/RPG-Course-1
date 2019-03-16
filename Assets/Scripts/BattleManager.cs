@@ -368,6 +368,8 @@ public class BattleManager : MonoBehaviour {
 		GameManager.instance.battleActive = false;
 		
 		AudioManager.instance.PlayBGM(FindObjectOfType<CameraController>().musicToPlay); //restart level music
+		
+		//BattleRewards.instance.OpenRewardSceen(0, );
 	}
 
 	public IEnumerator GameOverCo(){
