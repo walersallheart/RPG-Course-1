@@ -39,8 +39,12 @@ public class BattleManager : MonoBehaviour {
 	public BattleNotification battleNotice;
 
 	public int chanceToFlee = 35;
+	private bool fleeing;
 
 	public string gameOverScene;
+
+	public int rewardXP;
+	public string[] rewardItems;
 
 
 	// Use this for initialization
@@ -150,6 +154,7 @@ public class BattleManager : MonoBehaviour {
 				if (activeBattlers[i].isPlayer) {
 					activeBattlers[i].theSprite.sprite = activeBattlers[i].deadSprite;
 				} else {
+					Debug.Log("Kill " + activeBattlers[i].gameObject.name);
 					activeBattlers[i].EnemyFade();
 				}
 			} else {
@@ -222,7 +227,7 @@ public class BattleManager : MonoBehaviour {
 		float damageCalc = (atkPwr / defPwr) * movePower * Random.Range(.9f, 1.1f);
 		int damageToGive = Mathf.RoundToInt(damageCalc);
 
-		Debug.Log(activeBattlers[currentTurn].charName + " is dealing " + damageCalc + " (" + damageToGive + ") damage to " + activeBattlers[target].charName);
+		//Debug.Log(activeBattlers[currentTurn].charName + " is dealing " + damageCalc + " (" + damageToGive + ") damage to " + activeBattlers[target].charName);
 
 		activeBattlers[target].currentHP -= damageToGive;
 
@@ -326,6 +331,8 @@ public class BattleManager : MonoBehaviour {
 			battleActive = false;
 			battleScene.SetActive(false);
 
+			fleeing = true;
+
 			StartCoroutine(EndBattleCo());
 		} else {
 			NextTurn();
@@ -340,7 +347,7 @@ public class BattleManager : MonoBehaviour {
 		targetMenu.SetActive(false);
 		magicMenu.SetActive(false);
 
-		//AudioManager.instance.PlayBGM(6);
+		AudioManager.instance.PlayBGM(5);
 
 		yield return new WaitForSeconds(.5f);
 
@@ -365,11 +372,15 @@ public class BattleManager : MonoBehaviour {
 		battleScene.SetActive(false);
 		activeBattlers.Clear();
 		currentTurn = 0;
-		GameManager.instance.battleActive = false;
 		
 		AudioManager.instance.PlayBGM(FindObjectOfType<CameraController>().musicToPlay); //restart level music
 		
-		//BattleRewards.instance.OpenRewardSceen(0, );
+		if (fleeing) {
+			GameManager.instance.battleActive = false;
+			fleeing = false;
+		} else {
+			BattleRewards.instance.OpenRewardSceen(rewardXP, rewardItems);
+		}
 	}
 
 	public IEnumerator GameOverCo(){
