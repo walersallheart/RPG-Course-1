@@ -15,6 +15,9 @@ public class BattleStarter : MonoBehaviour {
 
 	public bool cannotFlee;
 
+	public bool shouldCompleteQuest;
+	public string questToComplete;
+
 	// Use this for initialization
 	void Start () {
 		betweenBattleCounter = Random.Range(timeBetweenBattles * .5f, timeBetweenBattles * 1.5f);
@@ -73,5 +76,8 @@ public class BattleStarter : MonoBehaviour {
 		if (deactivateAfterStarting) {
 			gameObject.SetActive(false);
 		}
+
+		BattleRewards.instance.markQuestComplete = shouldCompleteQuest;
+		BattleRewards.instance.questToMark = questToComplete;
 	}
 }
