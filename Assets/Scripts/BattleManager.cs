@@ -154,7 +154,6 @@ public class BattleManager : MonoBehaviour {
 				if (activeBattlers[i].isPlayer) {
 					activeBattlers[i].theSprite.sprite = activeBattlers[i].deadSprite;
 				} else {
-					Debug.Log("Kill " + activeBattlers[i].gameObject.name);
 					activeBattlers[i].EnemyFade();
 				}
 			} else {
@@ -347,7 +346,7 @@ public class BattleManager : MonoBehaviour {
 		targetMenu.SetActive(false);
 		magicMenu.SetActive(false);
 
-		AudioManager.instance.PlayBGM(5);
+		//AudioManager.instance.PlayBGM(5);
 
 		yield return new WaitForSeconds(.5f);
 

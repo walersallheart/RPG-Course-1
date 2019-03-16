@@ -26,7 +26,6 @@ public class BattleChar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (shouldFade) {
-			Debug.Log("theSprite.color.a->"+theSprite.color.a);
 			theSprite.color = new Color(
 					Mathf.MoveTowards(theSprite.color.r, 1f, fadeSpeed * Time.deltaTime),
 					Mathf.MoveTowards(theSprite.color.g, 0f, fadeSpeed * Time.deltaTime),
@@ -35,9 +34,7 @@ public class BattleChar : MonoBehaviour {
 				);
 
 			if (theSprite.color.a <= 0f) {
-				Debug.Log("dead!");
 				gameObject.SetActive(false);
-				Destroy(gameObject);
 			}
 		}
 	}
