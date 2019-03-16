@@ -67,8 +67,8 @@ MonoBehaviour:
   armrPower: 5
   hasDied: 0
   theSprite: {fileID: 212097180683051822}
-  deadSprite: {fileID: 21300010, guid: 988d560df8d322a468c97243cbfd76e8, type: 3}
-  aliveSprite: {fileID: 21300010, guid: 988d560df8d322a468c97243cbfd76e8, type: 3}
+  deadSprite: {fileID: 0}
+  aliveSprite: {fileID: 0}
   fadeSpeed: 1
 --- !u!212 &212097180683051822
 SpriteRenderer:
