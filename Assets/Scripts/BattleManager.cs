@@ -46,6 +46,8 @@ public class BattleManager : MonoBehaviour {
 	public int rewardXP;
 	public string[] rewardItems;
 
+	public bool cannotFlee;
+
 
 	// Use this for initialization
 	void Start () {
@@ -56,7 +58,7 @@ public class BattleManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.T)) {
-			BattleStart(new string[] {"Eyeball", "Spider", "Skeleton"});
+			BattleStart(new string[] {"Eyeball", "Spider", "Skeleton"}, false);
 		}
 
 		if (battleActive) {
@@ -76,9 +78,11 @@ public class BattleManager : MonoBehaviour {
 		}
 	}
 
-	public void BattleStart(string[] enemiesToSpawn){
+	public void BattleStart(string[] enemiesToSpawn, bool setCannotFlee){
 		if (!battleActive) {
 			battleActive = true;
+
+			cannotFlee = setCannotFlee;
 
 			GameManager.instance.battleActive = true;
 
@@ -323,6 +327,13 @@ public class BattleManager : MonoBehaviour {
 	}
 
 	public void Flee(){
+		if (cannotFlee) {
+			battleNotice.theText.text = "Cannot flee this battle";
+			battleNotice.Activate();
+
+			return;
+		}
+
 		int fleeSuccess = Random.Range(0,100);
 
 		if (fleeSuccess < chanceToFlee){
